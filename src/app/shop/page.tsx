@@ -218,7 +218,7 @@ export default function ShopPage() {
                 <Gift className="w-8 h-8 mr-3" />
                 Cosmetic Collection
               </h2>
-
+              
               <div className="space-y-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -257,7 +257,7 @@ export default function ShopPage() {
                       <p className="text-gray-300 text-sm">Exclusive battlefield visual effects</p>
                       <div className="text-2xl font-bold text-red-400">$7.99</div>
                     </div>
-                  </div>
+                </div>
                   <button className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white font-bold px-6 py-3 rounded-lg hover:from-red-400 hover:to-red-500 transition-all duration-300">
                     <Sparkles className="w-5 h-5 mr-2 inline" />
                     Add Visual Impact
@@ -278,7 +278,7 @@ export default function ShopPage() {
                       <h3 className="text-blue-300 font-bold">Discord VIP Role</h3>
                       <p className="text-gray-300 text-sm">Exclusive community status & perks</p>
                       <div className="text-2xl font-bold text-blue-400">$4.99</div>
-                    </div>
+                </div>
                   </div>
                   <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:from-blue-400 hover:to-blue-500 transition-all duration-300">
                     <Crown className="w-5 h-5 mr-2 inline" />
@@ -301,7 +301,7 @@ export default function ShopPage() {
                 <Shield className="w-8 h-8 mr-3" />
                 Battle-Tested Security
               </h2>
-
+              
               <div className="grid md:grid-cols-3 gap-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -320,7 +320,7 @@ export default function ShopPage() {
                 >
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Zap className="w-8 h-8 text-white" />
-                  </div>
+                </div>
                   <h3 className="text-blue-300 font-bold mb-2">Instant Delivery</h3>
                   <p className="text-gray-300 text-sm">Digital items are delivered to your account instantly upon successful payment.</p>
                 </motion.div>
@@ -335,13 +335,13 @@ export default function ShopPage() {
                   <h3 className="text-purple-300 font-bold mb-2">30-Day Guarantee</h3>
                   <p className="text-gray-300 text-sm">Not satisfied? Enjoy our 30-day money-back guarantee on all premium purchases.</p>
                 </motion.div>
-              </div>
+                </div>
 
               <div className="mt-8 p-6 bg-gray-800/50 rounded-xl border border-gray-600">
                 <h3 className="text-neon-blue font-bold mb-4 flex items-center">
                   <Gem className="w-5 h-5 mr-2" />
                   Payment Methods
-                </h3>
+                  </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                   <div className="flex flex-col items-center">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-2">
@@ -385,7 +385,7 @@ export default function ShopPage() {
               <CheckCircle className="w-8 h-8 mr-3" />
               Conqueror's Compendium
             </h2>
-
+            
             <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -463,7 +463,7 @@ export default function ShopPage() {
                 <div className="text-6xl mb-4">🏰 ⚔️ 🏰</div>
                 <h2 className="text-3xl font-bold font-orbitron text-neon-red mb-4">
                   Legendary Support Citadel
-                </h2>
+            </h2>
                 <div className="text-neon-yellow font-semibold text-lg mb-4">
                   Your Fortress of Aid & Conquest!
                 </div>
@@ -482,11 +482,11 @@ export default function ShopPage() {
                 >
                   <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-full p-4 mb-4">
                     <Headphones className="w-8 h-8 text-black" />
-                  </div>
+              </div>
                   <div className="text-center">
                     <div className="text-green-400 font-bold text-lg mb-1">Battlefield Support</div>
                     <div className="text-gray-400 text-sm">24/7 active warriors</div>
-                  </div>
+              </div>
                 </motion.div>
 
                 <motion.div
@@ -496,14 +496,14 @@ export default function ShopPage() {
                 >
                   <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-full p-4 mb-4">
                     <Shield className="w-8 h-8 text-black" />
-                  </div>
+              </div>
                   <div className="text-center">
                     <div className="text-blue-400 font-bold text-lg mb-1">Fortress Security</div>
                     <div className="text-gray-400 text-sm">Impenetrable defenses</div>
-                  </div>
-                </motion.div>
+          </div>
+        </motion.div>
 
-                <motion.div
+        <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex flex-col items-center"
@@ -522,7 +522,7 @@ export default function ShopPage() {
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="/help"
+                href="/help"
                   className="inline-flex items-center bg-gradient-to-r from-neon-blue to-blue-500 text-black font-bold px-8 py-4 rounded-xl hover:from-blue-400 hover:to-neon-blue transition-all duration-300 text-lg shadow-lg shadow-neon-blue/30"
                 >
                   <Trophy className="w-6 h-6 mr-2" />
@@ -531,7 +531,7 @@ export default function ShopPage() {
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  href="mailto:helpearthnetmc@gmail.com?subject=Shop Support"
+                href="mailto:helpearthnetmc@gmail.com?subject=Shop Support"
                   className="inline-flex items-center bg-gradient-to-r from-neon-red to-red-500 text-white font-bold px-8 py-4 rounded-xl hover:from-red-400 hover:to-neon-red transition-all duration-300 text-lg shadow-lg shadow-neon-red/30"
                 >
                   <Crown className="w-6 h-6 mr-2" />

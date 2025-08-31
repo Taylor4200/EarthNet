@@ -159,7 +159,7 @@ export default function ForumsPage() {
             <MessageSquare className="w-12 h-12 text-neon-blue mr-4" />
             <h1 className="text-5xl md:text-6xl font-bold font-orbitron text-gradient">
               Earth.Net Forums
-            </h1>
+          </h1>
           </div>
           <p className="text-xl text-gray-300 font-dm-sans max-w-3xl mx-auto mb-8">
             Join the ultimate community discussion hub for Earth.Net players worldwide
@@ -408,7 +408,7 @@ export default function ForumsPage() {
                 <MessageCircle className="w-8 h-8 mr-3" />
                 Discord Community
               </h2>
-
+              
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-discord-blue/20 border border-discord-blue/30 rounded-xl p-6">
                   <h3 className="text-discord-blue font-bold mb-3 flex items-center">
@@ -441,9 +441,9 @@ export default function ForumsPage() {
                     <div>🎤 General Voice</div>
                     <div>🎮 Gaming Channels</div>
                     <div>🏆 Tournament Voice</div>
-                  </div>
                 </div>
               </div>
+            </div>
 
               {/* Discord Channels */}
               <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-600">
@@ -456,8 +456,8 @@ export default function ForumsPage() {
                       <div>#announcements - Updates</div>
                       <div>#strategy - Game tactics</div>
                       <div>#trading - Economy</div>
-                    </div>
                   </div>
+                </div>
                   <div className="space-y-2">
                     <h4 className="text-green-400 font-semibold">🔊 Voice Channels</h4>
                     <div className="text-sm text-gray-400 space-y-1">
@@ -465,8 +465,8 @@ export default function ForumsPage() {
                       <div>Gaming Lounge</div>
                       <div>Tournament Hall</div>
                       <div>Music Room</div>
-                    </div>
                   </div>
+                </div>
                   <div className="space-y-2">
                     <h4 className="text-purple-400 font-semibold">📋 Special Channels</h4>
                     <div className="text-sm text-gray-400 space-y-1">
@@ -494,7 +494,7 @@ export default function ForumsPage() {
               <Shield className="w-8 h-8 mr-3" />
               Forum Guidelines
             </h2>
-
+            
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -511,7 +511,7 @@ export default function ForumsPage() {
                   <p>• No harassment or hate speech</p>
                   <p>• Keep discussions civil</p>
                   <p>• Respect different viewpoints</p>
-                </div>
+              </div>
               </motion.div>
 
               <motion.div
@@ -529,7 +529,7 @@ export default function ForumsPage() {
                   <p>• Keep posts relevant</p>
                   <p>• No excessive spam</p>
                   <p>• Follow category rules</p>
-                </div>
+              </div>
               </motion.div>
 
               <motion.div
@@ -547,7 +547,7 @@ export default function ForumsPage() {
                   <p>• Share knowledge and tips</p>
                   <p>• Welcome new players</p>
                   <p>• Report rule violations</p>
-                </div>
+              </div>
               </motion.div>
             </div>
           </div>

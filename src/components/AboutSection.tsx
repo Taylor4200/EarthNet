@@ -3,65 +3,31 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Box, MeshDistortMaterial } from '@react-three/drei'
+import { OrbitControls, Sphere, useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 import ClientOnly from './ClientOnly'
 
-function AnimatedTerrain() {
-  const groupRef = useRef<THREE.Group>(null)
+function AnimatedGlobe() {
+  const meshRef = useRef<THREE.Mesh>(null)
+
+  // Load the Earth texture
+  const earthTexture = useTexture('/8k_earth_daymap.jpg')
 
   useFrame((state) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += 0.01
+    if (meshRef.current) {
+      meshRef.current.rotation.y += 0.008
+      meshRef.current.rotation.x += 0.003
     }
   })
 
   return (
-    <group ref={groupRef}>
-      {/* Main terrain block */}
-      <Box args={[2, 1.5, 2]} position={[0, 0, 0]}>
-        <MeshDistortMaterial
-          color="#1e3a8a"
-          attach="material"
-          distort={0.2}
-          speed={1}
-          roughness={0.8}
-          metalness={0.2}
-        />
-      </Box>
-
-      {/* Smaller blocks representing structures */}
-      <Box args={[0.5, 0.8, 0.5]} position={[1.2, 0.4, 0.8]}>
-        <MeshDistortMaterial
-          color="#064e3b"
-          attach="material"
-          distort={0.1}
-          speed={0.5}
-          roughness={0.9}
-        />
-      </Box>
-
-      <Box args={[0.4, 1.2, 0.4]} position={[-1, 0.6, -0.5]}>
-        <MeshDistortMaterial
-          color="#581c87"
-          attach="material"
-          distort={0.15}
-          speed={0.8}
-          roughness={0.7}
-        />
-      </Box>
-
-      {/* Floating particles */}
-      <Box args={[0.1, 0.1, 0.1]} position={[1.5, 1, 1]}>
-        <meshBasicMaterial color="#00ffff" />
-      </Box>
-      <Box args={[0.08, 0.08, 0.08]} position={[-1.3, 1.2, -0.8]}>
-        <meshBasicMaterial color="#00ff00" />
-      </Box>
-      <Box args={[0.06, 0.06, 0.06]} position={[0.8, -0.8, 1.2]}>
-        <meshBasicMaterial color="#ff00ff" />
-      </Box>
-    </group>
+    <Sphere ref={meshRef} args={[1, 32, 32]} scale={1.2}>
+      <meshStandardMaterial
+        map={earthTexture}
+        roughness={0.8}
+        metalness={0.1}
+      />
+    </Sphere>
   )
 }
 
@@ -82,19 +48,19 @@ export default function AboutSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-earth-blue to-earth-purple rounded-2xl overflow-hidden">
               <ClientOnly>
                 <Canvas
-                  camera={{ position: [3, 2, 3], fov: 60 }}
+                  camera={{ position: [0, 0, 3], fov: 50 }}
                   dpr={[1, 2]}
                   performance={{ min: 0.5 }}
                 >
                   <ambientLight intensity={0.6} />
                   <directionalLight position={[5, 5, 5]} intensity={0.8} />
                   <pointLight position={[-5, 5, -5]} intensity={0.5} color="#00ffff" />
-                  <AnimatedTerrain />
+                  <AnimatedGlobe />
                   <OrbitControls
                     enableZoom={false}
                     enablePan={false}
                     autoRotate
-                    autoRotateSpeed={1}
+                    autoRotateSpeed={0.8}
                     enableDamping={false}
                   />
                 </Canvas>
@@ -107,7 +73,7 @@ export default function AboutSection() {
               transition={{ duration: 4, repeat: Infinity }}
               className="absolute top-4 right-4 text-neon-blue text-sm font-mono"
             >
-              EARTH_SCALE_MAP
+              GLOBAL_SCALE_VIEW
             </motion.div>
 
             <motion.div
@@ -115,7 +81,7 @@ export default function AboutSection() {
               transition={{ duration: 5, repeat: Infinity }}
               className="absolute bottom-4 left-4 text-neon-green text-sm font-mono"
             >
-              STRATEGY_ENGINE
+              EARTH_STRATEGY
             </motion.div>
           </motion.div>
 
