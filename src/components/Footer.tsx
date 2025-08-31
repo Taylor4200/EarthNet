@@ -12,10 +12,21 @@ import {
   Heart
 } from 'lucide-react'
 
+interface FooterLink {
+  name: string
+  href: string
+  icon: React.ComponentType<{ className?: string }>
+  external?: boolean
+}
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const footerLinks = {
+  const footerLinks: {
+    legal: FooterLink[]
+    support: FooterLink[]
+    community: FooterLink[]
+  } = {
     legal: [
       { name: 'Terms of Service', href: '/terms', icon: FileText },
       { name: 'Privacy Policy', href: '/privacy', icon: Shield },
