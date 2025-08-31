@@ -4,7 +4,7 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    unoptimized: true, // For development
+    unoptimized: false, // Enable optimization for production
   },
   experimental: {
     optimizePackageImports: ['lucide-react', '@react-three/fiber', '@react-three/drei'],
