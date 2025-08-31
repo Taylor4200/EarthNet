@@ -1,14 +1,41 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Play, MessageSquare, ShoppingCart, HelpCircle, Mail, Users, Lightbulb, Bug, Shield, FileText, ExternalLink } from 'lucide-react'
+import { Menu, X, Play, MessageSquare, ShoppingCart, HelpCircle, Mail, Users, Lightbulb, Bug, Shield, FileText, ExternalLink, Crown } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleMouseEnter = (dropdownName: string) => {
+    // Clear any existing timeout
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current)
+      hoverTimeoutRef.current = null
+    }
+    // Immediately show dropdown
+    setActiveDropdown(dropdownName)
+  }
+
+  const handleMouseLeave = () => {
+    // Set timeout to hide dropdown after 150ms delay
+    hoverTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 150)
+  }
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current)
+      }
+    }
+  }, [])
 
   const navigation = [
     {
@@ -24,6 +51,7 @@ export default function Header() {
         { name: 'Discord', href: 'https://discord.gg/pKb9VUcyGH', icon: MessageSquare, external: true },
         { name: 'Forums', href: '/forums', icon: MessageSquare },
         { name: 'Help Center', href: '/help', icon: HelpCircle },
+        { name: 'Our Team', href: '/owners', icon: Crown },
       ]
     },
     {
@@ -106,8 +134,8 @@ export default function Header() {
                   // Dropdown
                   <div
                     className="relative"
-                    onMouseEnter={() => setActiveDropdown(item.name)}
-                    onMouseLeave={() => setActiveDropdown(null)}
+                    onMouseEnter={() => handleMouseEnter(item.name)}
+                    onMouseLeave={handleMouseLeave}
                   >
                     <button className="flex items-center space-x-2 text-gray-300 hover:text-neon-blue transition-colors duration-300 font-dm-sans">
                       <item.icon className="w-4 h-4" />
@@ -124,7 +152,9 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-56 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-lg shadow-xl backdrop-blur-md"
+                        className="absolute top-full left-0 mt-1 w-56 bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-lg shadow-xl backdrop-blur-md"
+                        onMouseEnter={() => handleMouseEnter(item.name)}
+                        onMouseLeave={handleMouseLeave}
                       >
                         <div className="py-2">
                           {item.items?.map((subItem) => (
