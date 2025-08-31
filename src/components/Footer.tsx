@@ -34,7 +34,7 @@ export default function Footer() {
     ],
     support: [
       { name: 'Help Center', href: '/help', icon: HelpCircle },
-      { name: 'Discord Server', href: '/discord', icon: MessageCircle, external: true },
+      { name: 'Discord Server', href: 'https://discord.gg/pKb9VUcyGH', icon: MessageCircle, external: true },
       { name: 'Contact Us', href: '/contact', icon: Mail }
     ],
     community: [
@@ -88,7 +88,9 @@ export default function Footer() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href="/discord"
+                href="https://discord.gg/pKb9VUcyGH"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 hover:bg-neon-blue/20 rounded-lg flex items-center justify-center transition-colors duration-300 border border-gray-700 hover:border-neon-blue"
               >
                 <MessageCircle className="w-5 h-5 text-gray-400 hover:text-neon-blue transition-colors" />

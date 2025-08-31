@@ -139,9 +139,9 @@ export default function HeroSection() {
           <button className="btn-primary glow">
             Join Now
           </button>
-          <button className="btn-secondary">
+          <a href="https://discord.gg/pKb9VUcyGH" target="_blank" rel="noopener noreferrer" className="btn-secondary">
             Discord Server
-          </button>
+          </a>
         </motion.div>
       </div>
 

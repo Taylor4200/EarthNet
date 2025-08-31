@@ -188,12 +188,12 @@ export default function ImportantNotice() {
                 </a>
               </div>
             </div>
-            <div className="text-center mt-6">
-              <a href="https://discord.gg/6yP2X2ch" className="inline-flex items-center bg-discord-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-discord-blue-dark transition-all duration-300">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Join Our Discord
-              </a>
-            </div>
+                          <div className="text-center mt-6">
+                <a href="https://discord.gg/pKb9VUcyGH" className="inline-flex items-center bg-discord-blue text-white font-bold px-6 py-3 rounded-lg hover:bg-discord-blue-dark transition-all duration-300">
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Join Our Discord
+                </a>
+              </div>
           </div>
         </motion.div>
 

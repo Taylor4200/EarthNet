@@ -227,7 +227,7 @@ export default function TermsOfUsePage() {
               </div>
               <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-4">
                 <p>🌐 Website: Earth.Net Site</p>
-                <p>💬 Discord: <a href="https://discord.gg/6yP2X2ch" className="text-neon-blue hover:text-neon-green">https://discord.gg/6yP2X2ch</a></p>
+                                  <p>💬 Discord: <a href="https://discord.gg/pKb9VUcyGH" className="text-neon-blue hover:text-neon-green">https://discord.gg/pKb9VUcyGH</a></p>
               </div>
             </div>
           </div>
