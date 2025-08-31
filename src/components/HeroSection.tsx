@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Sphere, MeshDistortMaterial, useTexture } from '@react-three/drei'
+import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 import ClientOnly from './ClientOnly'
 
@@ -120,7 +120,7 @@ export default function HeroSection() {
           className="mb-8"
         >
           <h1 className="text-6xl md:text-8xl font-bold mb-6 font-orbitron text-gradient tracking-wider">
-            🌍 Earth.Net
+            Earth.Net
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-space-grotesk text-gray-300 max-w-2xl mx-auto leading-relaxed">
             The World's First Minecraft Earth Strategy Server
