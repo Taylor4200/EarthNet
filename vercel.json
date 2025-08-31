@@ -1,3 +1,30 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/features",
+      "destination": "/features",
+      "permanent": false
+    },
+    {
+      "source": "/bugs",
+      "destination": "/bugs",
+      "permanent": false
+    },
+    {
+      "source": "/forums",
+      "destination": "/forums",
+      "permanent": false
+    },
+    {
+      "source": "/shop",
+      "destination": "/shop",
+      "permanent": false
+    },
+    {
+      "source": "/join",
+      "destination": "/join",
+      "permanent": false
+    }
+  ]
 }

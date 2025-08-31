@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Orbitron, Space_Grotesk, DM_Sans } from 'next/font/google'
 import '../styles/globals.css'
+import Header from '@/components/Header'
 
 const orbitron = Orbitron({
   subsets: ['latin'],
@@ -29,8 +30,8 @@ export const metadata: Metadata = {
   title: '🌍 Earth.Net - Minecraft Earth Strategy Server',
   description: 'The World\'s First Minecraft Earth Strategy Server. Strategy. Survival. Stakes.',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
+    icon: '/EArthnetlogo1 (2).png',
+    shortcut: '/EArthnetlogo1 (2).png',
   },
 }
 
@@ -45,7 +46,10 @@ export default function RootLayout({
         className={`${inter.className} ${orbitron.variable} ${spaceGrotesk.variable} ${dmSans.variable} bg-earth-dark text-white overflow-x-hidden`}
         suppressHydrationWarning={true}
       >
-        {children}
+        <Header />
+        <main className="pt-16">
+          {children}
+        </main>
       </body>
     </html>
   )
