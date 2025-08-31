@@ -754,6 +754,9 @@ video {
 .time-gradient-shift {
     animation: gradient-shift 3600s linear infinite;
   }
+.pointer-events-none {
+  pointer-events: none;
+}
 .visible {
   visibility: visible;
 }

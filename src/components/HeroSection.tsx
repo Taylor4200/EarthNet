@@ -275,7 +275,7 @@ export default function HeroSection() {
 
       {/* Three.js Canvas - Client only to prevent hydration issues */}
       <ClientOnly>
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 pointer-events-none">
           <Canvas
             camera={{ position: [0, 0, 5], fov: 75 }}
             dpr={[1, 2]}
@@ -337,6 +337,7 @@ export default function HeroSection() {
               autoRotate
               autoRotateSpeed={isNight ? 0.3 : isEvening ? 0.4 : 0.5}
               enableDamping={false}
+              enableRotate={false}
             />
           </Canvas>
         </div>
@@ -379,9 +380,9 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="btn-primary glow">
+          <a href="/join" className="btn-primary glow">
             Join Now
-          </button>
+          </a>
           <a href="https://discord.gg/pKb9VUcyGH" target="_blank" rel="noopener noreferrer" className="btn-secondary">
             Discord Server
           </a>
